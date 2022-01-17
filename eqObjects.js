@@ -1,25 +1,5 @@
-// Copied from assertEqual.js (12 Jan 2022 @ 8:42 PM)
-const assertEqual = (actual, expected) => {
-  if (actual === expected) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-// Copied from eqArrays.js (12 Jan 2022 @ 9:16 PM)
-const eqArrays = (array1, array2) => {
-  if (array1.length !== array2.length) {
-    return false;
-  } else {
-    for (const i in array1) {
-      if (array1[i] !== array2[i]) {
-        return false;
-      }
-    }
-  }
-  return true;
-};
+const assertEqual = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
 const eqObjects = (object1, object2) => {
   const keysArray1 = Object.keys(object1);
@@ -30,7 +10,6 @@ const eqObjects = (object1, object2) => {
     return false;
   }
 
-  // process.exit();
   // Loop through and compare the target elemenet from two arrays.
   for (const element1 of keysArray1) {
     for (const element2 of keysArray2) {
@@ -62,22 +41,4 @@ const eqObjects = (object1, object2) => {
   return true;
 }
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-eqObjects(ab, ba); // => true
-
-const abc = { a: "1", b: "2", c: "3" };
-eqObjects(ab, abc); // => false
-
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-eqObjects(cd, dc); // => true
-
-const cd2 = { c: "1", d: ["2", 3, 4] };
-eqObjects(cd, cd2); // => false
-
-// TEST CASES:
-assertEqual(eqObjects(ab, ba), true);
-assertEqual(eqObjects(ab, abc), false);
-assertEqual(eqObjects(cd, dc), true);
-assertEqual(eqObjects(cd, cd2), false);
+module.exports = eqObjects;
