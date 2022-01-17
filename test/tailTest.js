@@ -1,6 +1,8 @@
+const assert = require('chai').assert;
 const assertEqual = require('../assertEqual');
 const tail = require('../tail');
 
+/*
 // Test Case #1: Check to ensure that the original array has not be modified.
 const array1 = ['Light', 'House', 'Labs'];
 console.log(`Test Case #1:`);
@@ -17,3 +19,21 @@ console.log('\n');
 const array3 = [];
 console.log(`Test Case #3:`);
 assertEqual(tail(array3).length, 0); // Expected Output: 'Assertion Passed'
+*/
+
+describe('#tail', () => {
+  it('returns the array length minus the head (i.e. minus 1)', () => {
+    const arr = ['Light', 'House', 'Labs'];
+    assert.deepEqual(tail(arr).length, 2);
+  });
+
+  it('returns an empty array when the input array only has one element', () => {
+    const arr = ['Light'];
+    assert.deepEqual(tail(arr), []);
+  });
+
+  it('returns an empty array when the input array is also empty', () => {
+    const arr = [];
+    assert.deepEqual(tail(arr), []);
+  });
+});
