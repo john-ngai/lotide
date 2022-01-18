@@ -17,22 +17,22 @@ const assertArraysEqual = require('./assertArraysEqual');
 const assertObjectsEqual = require('./assertObjectsEqual');
 
 const lotide = {
-  head: head,
-  tail: tail,
-  middle: middle,
-  countLetters: countLetters,
-  countOnly: countOnly,
-  findKey: findKey,
-  findKeyByValue: findKeyByValue,
-  letterPositions: letterPositions,
-  map: map,
-  takeUntil: takeUntil,
-  without: without,
-  assertEqual: assertEqual,
-  eqArrays: eqArrays,
-  eqObjects: eqObjects,
-  assertArraysEqual: assertArraysEqual,
-  assertObjectsEqual: assertObjectsEqual,
+  head,
+  tail,
+  middle,
+  countLetters,
+  countOnly,
+  findKey,
+  findKeyByValue,
+  letterPositions,
+  map,
+  takeUntil,
+  without,
+  assertEqual,
+  eqArrays,
+  eqObjects,
+  assertArraysEqual,
+  assertObjectsEqual,
 };
 
 module.exports = lotide;
